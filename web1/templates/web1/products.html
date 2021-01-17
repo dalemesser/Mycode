@@ -1,0 +1,49 @@
+{% extends "Web1/base.html" %}
+
+{% block body %}
+
+<style>
+    .heading{
+        width: 100%;
+        font-size: 40px;
+        font-family: monospace;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table{
+        width: 100%;
+    }
+</style>
+
+<div class="heading">Products</div>
+<div class="container">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>price</th>
+            <th>date</th>
+            <th>Quantity</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for item in products %}
+        <tr>
+            <th>{{item.name}}</th>
+            <th>{{item.category}}</th>
+            <th>{{item.price}}</th>
+            <th>{{item.date_created.date}}</th>
+            <th>{{item.qtn}}</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+
+{% endblock %}

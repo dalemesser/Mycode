@@ -1,0 +1,45 @@
+{% extends "Web1/base.html" %}
+
+{% block body %}
+
+<style>
+    .form{
+        padding-left: 500px;
+        padding-top: 100px;
+    }
+    .field{
+        padding-top: 15px;;
+    }
+    .submit{
+        margin-top: 20px;
+        font-size: 15px;
+        color: white;
+        background: rgb(18, 134, 228);
+        padding: 5px;
+        border-radius: 6px;
+        margin-left: 45px;
+    }
+    .row{
+    margin-top:10px;
+    }
+</style>
+
+<div class="form">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class = 'row'>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="row">
+            <input type="password" name="password" placeholder="password">
+        </div>
+        <button class="submit" type="submit" >login</button>
+    </form>
+
+    {% for messege in messages %}
+    <p>{{messege}}</p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

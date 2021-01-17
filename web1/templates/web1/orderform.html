@@ -1,0 +1,66 @@
+{% extends "web1/base.html" %}
+
+{% block title %}Order Form{% endblock %}
+
+{% block body %}
+
+
+<style>
+    body{
+        background: rgb(245, 246, 250);
+
+    }
+    .cont{
+        margin-left:500px;
+        margin-top:100px;
+        border:solid 2px black;
+        margin-right: 500px;
+        background: white;
+    }
+    form{
+
+        margin-top:10px;
+        margin-right: 40px;
+        margin-bottom: 10px;
+    }
+    .inner{
+        margin: 10px;
+        font-family: cursive;
+        font-size: 20px;
+    }
+    .submit{
+        background: rgb(80, 152, 246);
+        font-size: 20px;
+        margin-left: 90px;
+        margin-top: 10px ;
+        border-radius: 5px;
+        color:blanchedalmond;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+    .order{
+        padding-left:500px ;
+        font-size: 40px;
+        font-family: monospace;
+        font-weight: bold;
+        background: rgb(255, 255, 255);
+    }
+</style>
+
+
+{% include 'web1/status.html' %}
+<div class="order">
+    Create Order
+</div>
+<form action="", method="POST">
+    {% csrf_token %}
+        {% for field in form %}
+            <div class="inner">
+                {{field.label}} :-
+                {{field}}
+            </div>
+        {%endfor%}
+        <input class="submit" type="submit">
+</form>
+
+{% endblock %}

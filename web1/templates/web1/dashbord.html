@@ -1,0 +1,113 @@
+{% extends "Web1/base.html" %}
+
+{% block body %}
+
+{% include 'web1/status.html' %}
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background: rgb(238, 236, 235);
+        font-family: monospace;
+    }
+    .row{
+        background: rgb(248, 236, 236);
+        width: 100%;
+        height: 500px;
+        margin: 4px;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+    .col{
+        padding: 10px;
+    }
+
+    .col button{
+        width: 50%;
+        background-color: rgb(46, 123, 224);
+        font-size: 20px;
+        border-radius: 6px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: white;
+        margin-left :100px;
+    }
+
+    .card {
+        width: 100%;
+        padding-left: 2px;
+    }
+
+    table{
+        
+        width: 100%;
+    }
+    th{
+        padding-right: 30px;
+        padding-top: 5px;
+        font-size: 18px;
+        margin-left:10px;
+        border-bottom: 1px black  solid;
+    
+    }
+   
+    @media(max-width: 700px){
+            .row{
+                display:grid;
+                grid-template-columns: 1fr;
+                height: 500px;
+            }
+        }
+
+</style>
+
+<div class="row">
+    <div class="col">
+        <button><a href="{% url 'createcustomer' %}">Create Customer</a></button>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                </tr>
+                {% for cusomer in customers %}
+                <tr>
+                    <th><a href="{% url 'customers' cusomer.id %}">{{cusomer.name}}</a></th>
+                    <th>{{cusomer.phone}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="col">
+        <button><a href="{% url 'createorder' %}">Create Order</a></button>
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Date Ordered</th>
+                    <th> Ordered Time</th>
+                    <th>Status</th>
+
+                </tr>
+                {% for order in order_item %}
+                <tr>
+                  
+                    <th>{{order.product.name}}</th>
+                    <th>{{order.date_created.date}}</th>
+                    <th>{{order.date_created.time}}</th>
+                    <th>{{order.status}}</th>
+                    <th><a href="{% url 'updateorder' order.id %}">Update</a></th>
+                    <th><a href="{% url 'deleteorder' order.id %}">Delete</a></th>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
+</div>
+
+  
+
+{% endblock %}
