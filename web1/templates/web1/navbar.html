@@ -130,6 +130,7 @@
 <body>
 <nav class="navbar">
       <label class="logo">Shopsimple</label>
+      {% if request.user.is_authenticated %}
       <a class="toggle-button" >
           <span class="bar">-</span>
           <span class="bar">-</span>
@@ -138,14 +139,20 @@
 
       <div class="navbar-links">
         <ul>
+            {% if request.user.is_staff %}
             <li><a  href="{% url 'home' %}"> Dashbord</a></li>
             <li><a  href="{% url 'products' %}"> products</a> </li>
+            {% endif %}
             <li><a href="{% url 'register' %}"> Register</a></li>
             <li><a href="#"> About</a></li>
             <li><a href="#"> Feedback</a></li>
+
+
             <span class="span-1">Hello,{{request.user}}</span>
             <span class="span-2"><a style="color: cornsilk;" href="{% url 'logout' %}">logout</a></span>
+
         </ul>
+            {%endif%}
 
 
       </div>

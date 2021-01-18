@@ -13,5 +13,6 @@ urlpatterns = [
     path("deletecustomer/<str:id>",views.deletecustomer,name="deletecustomer"),
     path("register",views.register,name="register"),
     path('login',views.login,name="login"),
-    path('logout',views.logout,name='logout')
+    path('logout',views.logoutuser,name='logout'),
+    path("userpage",views.userpage,name="userpage")
 ]
