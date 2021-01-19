@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'web1.apps.Web1Config',
     'django_filters',
     'diary.apps.DiaryConfig',
-    "smb.apps.SmbConfig"
+    "smb.apps.SmbConfig",
+    "designs.apps.DesignsConfig"
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
