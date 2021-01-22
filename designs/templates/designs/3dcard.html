@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Effects</title>
+    {% load static %}
+    <link rel="stylesheet" type= text/css href="{% static '/css/3dcard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="sneaker">
+                <div class="circle">
+                    <img src="{% static 'images/cake1.jpg' %}" alt="adidas">
+                </div>
+            </div>
+                <div class="info">
+                    <h1 class="titile">RB Cake</h1>
+                    <h3>CHOCALATE CAKE WITH CHERRY MIX</h3>
+                    <div class="size">
+                        <button>Small</button>
+                        <button>Medium</button>
+                        <button class="active">Large</button>
+                    </div>
+                    
+                        <button  class="purchase">
+                            Purchase
+                        </button>
+                 
+                    
+                </div>
+            
+        </div>
+    </div>
+     <script src="{% static '/js/3dcard.js' %}"></script>
+
+
+    
+</body>
+</html>

@@ -1,5 +1,60 @@
 {% extends "Web1/base.html" %}
 
 {% block body %}
-<h1>user page</h1>
+{% include 'web1/status.html' %}
+<style>
+       .row-2{
+        display:grid;
+        grid-template-columns:1fr;
+        width: 98%;
+
+        margin:  20px;
+        background: rgb(255, 255, 255);
+        padding: 10px 0 ;
+        border-radius: 10px;
+        position: relative;
+
+    }
+
+        @media (max-width :1000px){
+    .row-2{
+        display:grid;
+        grid-template-columns:1fr;
+        width: 100%;
+        margin:  20px;
+        background: rgb(255, 255, 255);
+
+        border-radius: 10px;
+        position: relative;
+
+
+
+    }
+
+
+}
+</style>
+<div class="row-2">
+    <table >
+        <tr style="font-size: 20px;color: rgb(75, 75, 241);">
+            <th>Product</th>
+            <th>Note</th>
+            <th>Date </th>
+            <th> Time</th>
+            <th>Status</th>
+
+        </tr>
+        {% for item in order %}
+        <tr>
+            <th>{{item.product}}</th>
+            <th>{{item.note}}</th>
+            <th>{{item.date_created.date}}</th>
+            <th>{{item.date_created.time}}</th>
+            <th>{{item.status}}</th>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
 {% endblock %}

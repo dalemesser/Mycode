@@ -11,38 +11,84 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        color:white;
     }
 
-    table{
-        width: 100%;
+    .container-1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 90%;
+        margin: 30px 50px;
+
     }
+
+    .content{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin:5px 0;
+    }
+    .profilepic{
+        max-width:200px;
+        max-heigth:200px;
+        margin:20px 0;
+        border-radius: 50%;
+        width:100%;
+        margin: 20px 20px;
+    }
+
+    .container-1 .card{
+    margin:10px;
+    background: white;
+    border-radius:10px;
+    padding:10px 0 20px 20px  ;
+    }
+     .container-1 .card .image{
+    height:200px;
+    }
+
+    @media(max-width:1000px){
+    .container-1{
+       display: grid;
+       grid-template-columns: 1fr ;
+       width: 70%;
+       margin: 30px 60px;
+
+    }}
+
+
+
 </style>
 
 <div class="heading">Products</div>
-<div class="container">
-    <table>
-        <tr>
-            <th>Product</th>
-            <th>Category</th>
-            <th>price</th>
-            <th>date</th>
-            <th>Quantity</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        {% for item in products %}
-        <tr>
-            <th>{{item.name}}</th>
-            <th>{{item.category}}</th>
-            <th>{{item.price}}</th>
-            <th>{{item.date_created.date}}</th>
-            <th>{{item.qtn}}</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        {% endfor %}
-    </table>
+<div class="container-1">
+    {% for item in products %}
+     <div class="card">
+         <div class="image">
+                <img class="profilepic" src="{{item.picture.url}}">
+         </div>
 
+            <div class="content">
+                <div>Name</div>
+                <div>{{item.name}}</div>
+            </div>
+            <div class="content">
+                <div>Product</div>
+                <div>{{item.price}}</div>
+            </div>
+            <div class="content">
+                <div>Price</div>
+                <div>{{item.price}}</div>
+            </div>
+            <div class="content">
+                <div>Date Created</div>
+                <div>{{item.date_created.date}}</div>
+            </div>
+            <div class="content">
+                <div>Quantity</div>
+                <div>{{item.qtn}}</div>
+            </div>
+    </div>  
+    {% endfor %}
 </div>
 
 

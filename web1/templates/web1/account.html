@@ -1,0 +1,123 @@
+{% extends "Web1/base.html" %}
+
+{% block body %}
+
+<style>
+    .prfpic{
+        max-width:200px;
+        max-heigth:200px;
+        margin:20px 0;
+        border-radius: 50%;
+        width:100%;
+        margin: 20px 70px;
+    }
+
+    .row-account{
+    display:grid;
+    grid-template-columns:30% 70%;}
+
+    .col-account{
+    background:white;
+    margin:20px;
+    border-radius:10px;}
+
+    .card-account{
+    margin:10px 10px;
+    width:100%;
+    border-bottom: 2px solid black;
+
+    }
+
+     .card-account button{
+    width:80%;
+    margin:10px 0px 10px 30px;
+    background-color:rgb(7, 19, 88);
+    font-size:20px;
+    border-radius:10px;
+    color:white;
+
+    }
+    .account-details{
+    display:grid;
+    grid-template-columns:1fr;}
+
+    .account-details .heading{
+    width:100%;
+    font-size:25px;
+    text-align:center;
+    color:rgb(24, 175, 221);}
+
+    .card-account .form{
+    display:grid;
+    grid-template-columns:1fr;
+    width:100%;
+    margin:5px 3px;
+
+
+    }
+
+    .card-account .form .field{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin :3px 20px;
+
+    width:60%;
+
+
+    }
+
+
+    @media(max-width:800px){
+    .row-account{
+    display:grid;
+    grid-template-columns:1fr;}
+
+    .prfpic{
+        max-width:200px;
+        max-heigth:200px;
+
+        border-radius: 50%;
+        width:100%;
+        margin: 20px 0px 20px 150px;
+    }
+    }
+
+
+
+</style>
+
+<div class="row-account">
+    <div class="col-account">
+        <div class="card-account">
+            <button href="{% url 'home' %}">Back to Profile</button>
+        </div>
+        <div class="account-details">
+            <h3 class="heading">Account Settings</h3>
+            <img src="{{ request.user.customer.profile_picture.url}}" class="prfpic">
+        </div>
+
+
+    </div>
+    <div class="col-account">
+        <div class="card-account">
+            <form method="post" action="{% url 'account' %}" enctype="multipart/form-data">
+                {%csrf_token %}
+                {% for field in form %}
+                <div class= "form">
+                    <div class="field">
+                        {{field.label}}
+                        {{field}}
+                    </div>
+                </div>
+                {% endfor%}
+
+
+                <button type="submit">Update</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

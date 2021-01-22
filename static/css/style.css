@@ -1,4 +1,3 @@
-
 * {
   margin: 0px;
   padding: 0px;
@@ -111,8 +110,13 @@
   font-size: 50px;
 }
 
-p {
-  max-width: 1000px;
+.about {
+  font-family: sans-serif;
+  width: 100px;
+}
+
+.about .column-left img {
+  width: 100px;
 }
 
 /*responsive media query*/

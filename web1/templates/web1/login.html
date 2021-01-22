@@ -2,43 +2,33 @@
 
 {% block body %}
 
-<style>
-    .form{
-        padding-left: 500px;
-        padding-top: 100px;
-    }
-    .field{
-        padding-top: 15px;;
-    }
-    .submit{
-        margin-top: 20px;
-        font-size: 15px;
-        color: white;
-        background: rgb(18, 134, 228);
-        padding: 5px;
-        border-radius: 6px;
-        margin-left: 45px;
-    }
-    .row{
-    margin-top:10px;
-    }
-</style>
 
-<div class="form">
-    <form method="post" action="{% url 'login' %}">
+
+<div class="container">
+    <header>
+        Login Form
+    </header>
+    <form action="{% url 'login' %}" method="POST">
         {% csrf_token %}
-        <div class = 'row'>
-            <input type="text" name="username" placeholder="Username">
+        <div class="input-field">
+            <input type="text" placeholder="username" name="username">
         </div>
-        <div class="row">
-            <input type="password" name="password" placeholder="password">
+        <div class="input-field">
+            <input type="password" placeholder="password" name="password">
         </div>
-        <button class="submit" type="submit" >login</button>
+        <div class="button">
+            <button type="submit">Login</button>
+        </div>
+       
     </form>
-
-    {% for messege in messages %}
-    <p>{{messege}}</p>
-    {% endfor %}
+    <div class="message">
+        {% for messege in messages %}
+        <p>{{ messege}}</p>
+        {% endfor %}
+    </div>
+    <div class="signup">
+        If you new , <a href="{% url 'register' %}">sign up</a>
+    </div>
 </div>
 
 
