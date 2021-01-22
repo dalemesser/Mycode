@@ -1,4 +1,4 @@
-{% extends "Web1/base.html" %}
+{% extends "web1/base.html" %}
 
 {% block body %}
 
@@ -26,7 +26,7 @@
         {% csrf_token %}
         {% for field in form %}
         <div class="field">
-            {{field.label}} 
+            {{field.label}}
             <div class="field">{{ field}}</div>
         </div>
         {% endfor %}

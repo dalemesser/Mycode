@@ -1,4 +1,4 @@
-{% extends "Web1/base.html" %}
+{% extends "web1/base.html" %}
 
 {% block body %}
 
@@ -39,7 +39,7 @@
     }
 
     table{
-        
+
         width: 100%;
     }
     th{
@@ -48,9 +48,9 @@
         font-size: 18px;
         margin-left:10px;
         border-bottom: 1px black  solid;
-    
+
     }
-   
+
     @media(max-width: 700px){
             .row{
                 display:grid;
@@ -92,22 +92,22 @@
                 </tr>
                 {% for order in order_item %}
                 <tr>
-                  
+
                     <th>{{order.product.name}}</th>
                     <th>{{order.date_created.date}}</th>
                     <th>{{order.date_created.time}}</th>
                     <th>{{order.status}}</th>
                     <th><a href="{% url 'updateorder' order.id %}">Update</a></th>
                     <th><a href="{% url 'deleteorder' order.id %}">Delete</a></th>
-                    
+
                 </tr>
                 {% endfor %}
             </table>
         </div>
     </div>
-    
+
 </div>
 
-  
+
 
 {% endblock %}
