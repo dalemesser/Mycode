@@ -468,7 +468,7 @@ section .title::after {
 
   .about .about-content {
     display: grid;
-    grid-center-template: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     width: 100%;
   }
