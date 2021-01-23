@@ -113,6 +113,11 @@
             margin-bottom: 25px;
 
         }
+        @media(max-width:600px){
+        .content{
+        display:grid;
+        grid-template-columns: 1fr;
+        }}
     </style>
 </head>
 <body>
@@ -166,7 +171,7 @@
                 <div class="card-3">
                     <form  method="get" action="{% url 'name' %}">
                         <br>
-                        <div> <h4>Search By Date 👇</h4></div>
+                        <div> <h4>Search By Year 👇</h4></div>
                         <input type="text" name="search">
                         <br>
                         <button type="submit">Search</button>
@@ -182,7 +187,7 @@
 
                     {% if  item.number %}
                             <div class="block">
-                                <div class="Label">Ansewer :</div>
+                                <div class="Label">Question No :</div>
                                 <div class="data">{{item.number}}</div>
                             </div>
                         {% endif %}
@@ -198,7 +203,7 @@
 
                         {% if  item.answer %}
                             <div class="block">
-                                <div class="Label">Ansewer :</div>
+                                <div class="Label">පිලිතුර:</div>
                                 <div class="data">{{item.answer}}</div>
                             </div>
                         {% endif %}
