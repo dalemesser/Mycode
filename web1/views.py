@@ -36,6 +36,7 @@ def register(request):
         if form.is_valid():
             user=form.save()
             group = Group.objects.get(name='Customer')
+            Customer.objects.create(user=user)
             user.groups.add(group)
             username = form.cleaned_data.get("username")
             messages.success(request,f"Account was created successfully for {username} ")
@@ -88,6 +89,7 @@ def customers(request,id):
 @allowed_users(allowed_roles=["admin"])
 @login_required(login_url="login")
 def create_order(request):
+
     form = OrderForm()
     order_items = Order.objects.all()
     orders = order_items.count()
@@ -95,8 +97,13 @@ def create_order(request):
     dilivered_orders = Order.objects.filter(status="dilivered").count()
     if request.method == 'POST':
         form = OrderForm(request.POST)
+
         if form.is_valid():
             form.save()
+            product = Products.objects.get(name=form.cleaned_data.get("product"))
+            product.qtn -= 1
+            product.save()
+            print(product.qtn)
             return HttpResponseRedirect(reverse("home"))
     context ={
         "form":form,
@@ -180,6 +187,31 @@ def deletecustomer(request,id):
 def logoutuser(request):
     logout(request)
     return HttpResponseRedirect(reverse("login"))
-
+@allowed_users(allowed_roles=["Customer"])
+@login_required(login_url="login")
 def userpage(request):
-    return render(request,"web1/userpage.html")
+    order = request.user.customer.order_set.all()
+    orders = order.count()
+    pending_orders = order.filter(status="pending").count()
+    dilivered_orders = order.filter(status="dilivered").count()
+    context = {
+        "order":order,
+        "orders":orders,
+        "pending_orders":pending_orders,
+        "dilivered_orders":dilivered_orders
+    }
+    return render(request,"web1/userpage.html",context)
+
+@allowed_users(allowed_roles=["Customer"])
+@login_required(login_url="login")
+def account(request):
+    user =request.user.customer
+    form = CreatCustomer(instance=user)
+    if request.method == "POST":
+        form = CreatCustomer(request.POST, request.FILES,instance=user)
+        if form.is_valid():
+            form.save()
+    context={
+        "form":form
+    }
+    return render(request,"web1/account.html",context)

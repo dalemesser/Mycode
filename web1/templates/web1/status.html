@@ -5,79 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            margin:0;
-        }
-        .container{
-            width: 100%;
-            font-family: monospace;
-            height: 200px;
+        .container-status{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            padding: 4px;
-            background-color: white;
-            gap: 10px;
+    
         }
-        .container .col-1{
-            padding-left: 130px;
-            padding-top: 20px;
+        .col{
+            background: white; 
+            margin: 10px 40px;   
             border-radius: 10px;
-            background: rgb(163, 222, 230);
+            height: 150px;
         }
-
-        .container .col-2{
-            padding-left: 100px;
-            padding-top: 20px;
-            border-radius: 10px;
-            background: rgb(245, 221, 168);
-        }
-        .container .col-3{
-            padding-left: 100px;
-            padding-top: 20px;
-            border-radius: 10px;
-            background: rgb(206, 236, 179);
-        }
-        @media(max-width: 700px){
-            .container{
-                display:grid;
-                grid-template-columns: 1fr;
-                height: 500px;
-            }
+        h1{
+            font-size: 30px;
+            font-weight: 700;
+            font-family: monospace;
+            width: 100%;
+            text-align: center;
+            color: rgb(49, 139, 243);
+            border-bottom: 1px solid;
+            padding-bottom: 7px;
         }
         .card{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-weight: bold;
-            font-size: 60px;
-            padding: 16px;
-            
-        }
+            font-size: 50px;
+            text-align:center;
+            font-weight: 1000;
+            margin-top: 10px;
+            color: rgb(8, 31, 93);
         
+        }
+
+        @media(max-width: 900px){
+        .container-status{
+            display: grid;
+            grid-template-columns: 1fr ;
+        }
+    
+        }
+            
+     
    
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="col-1">
+    <div class="container-status" >
+        <div class="col" id="order">
             <h1>Orders</h1>
             <div class="card">
                 {{orders}}
             </div>
         </div>
 
-        <div class="col-2">
+        <div class="col" id = "diliver">
             <h1>Orders Dilivered</h1>
             <div class="card">{{dilivered_orders}}</div>
         </div>
 
-        <div class="col-3">
+        <div class="col" id="pending">
             <h1>Orders Pending</h1>
             <div class="card">
                 {{ pending_orders}}
             </div>
-        </div>
-        
-        
+        </div>    
     </div>
     
 </body>

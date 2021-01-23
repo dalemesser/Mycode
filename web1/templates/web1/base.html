@@ -6,11 +6,12 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>{% block title %} {% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href=" static '/css/main.css'">
+    <link rel= "stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 
 </head>
 <body>
     {% include 'web1/navbar.html' %}
+
     {%block body %}
 
     {%endblock %}

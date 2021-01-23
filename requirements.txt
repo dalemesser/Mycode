@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asgiref==3.3.1
 certifi==2020.12.5
 chardet==3.0.4
@@ -11,3 +12,18 @@ pytz==2020.4
 requests==2.25.0
 sqlparse==0.4.1
 urllib3==1.26.2
+=======
+asgiref==3.3.1
+certifi==2020.12.5
+chardet==3.0.4
+Django==3.1.4
+django-filter==2.4.0
+idna==2.10
+install==1.3.4
+Pillow==8.0.1
+pyperclip==1.8.1
+pytz==2020.4
+requests==2.25.0
+sqlparse==0.4.1
+urllib3==1.26.2
+>>>>>>> f4db86c804e024d9b2a5d2940683ef02dfc49ac6

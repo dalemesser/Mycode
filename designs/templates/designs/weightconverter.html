@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Controler</title>
+    <style>
+        body{
+            margin-top: 70px;
+            display: flex;
+           flex-direction: column; 
+           margin-left: 300px;
+           padding-left: 100px;
+           padding-right: 100px;
+           
+           margin-right: 300px;
+           background-color: rgb(64, 143, 246);
+                   }
+        h1{
+            font-size: 50px;
+            font-weight: 700;
+            font-family: sans-serif;
+            padding-left: 6px;
+            
+        }
+        .lbs-input{
+            font-size: 30px;
+            color: rgb(94, 146, 241);
+        }
+        .container{
+            background-color: honeydew;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .output{
+            background-color: white;
+        }
+        .card-block{
+            background-color: rgba(251, 106, 93, 0.815);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Weight Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <input class="lbs-input" type="number" placeholder="Enter Pounds">
+                    </div>
+                </form>
+                <div class="output">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4>Kilo Grames:</h4>
+                            <div class="kilo-gram-output">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-block">
+                            <h4> Grames:</h4>
+                            <div class="gram-output">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-block">
+                            <h4>Ounce:</h4>
+                            <div class="Ounce-output">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".output").style.visibility = "hidden";
+        document.querySelector(".lbs-input").addEventListener("input",function(e){
+            document.querySelector(".output").style.visibility = "visible";
+            let lbs = e.target.value;
+            document.querySelector(".gram-output").innerHTML = lbs/0.0022046;
+            document.querySelector(".kilo-gram-output").innerHTML = lbs/2.2046;
+            document.querySelector(".Ounce-output").innerHTML = lbs*16;
+
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,42 +1,31 @@
 {% extends "web1/base.html" %}
 
+
 {% block body %}
 
-<style>
-    .form{
-        padding-left: 500px;
-        padding-top: 100px;
-    }
-    .field{
-        padding-top: 15px;;
-    }
-    .submit{
-        margin-top: 20px;
-        font-size: 15px;
-        color: white;
-        background: rgb(18, 134, 228);
-        padding: 5px;
-        border-radius: 6px;
-        margin-left: 45px;
-    }
-</style>
-
-<div class="form">
-    <form method="POST" action="{% url 'register' %}">
+<div class="container">
+    <header>
+         Sign Up
+    </header>
+    <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         {% for field in form %}
         <div class="field">
             {{field.label}}
             <div class="field">{{ field}}</div>
-        </div>
+
         {% endfor %}
-        <input class="submit" type="submit">
+        <div class="button">
+            <button type="submit">Signup</button>
+        </div>
+
     </form>
-    <div>
-        already a member?<a href="{% url 'login' %}">login</a>
+    <div class="signup">
+        If you new , <a href="{% url 'login' %}">Log in</a>
     </div>
-    {{form.error}}
 </div>
 
 
+
 {% endblock %}
+

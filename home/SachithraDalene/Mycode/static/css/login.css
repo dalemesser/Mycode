@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgb(1, 18, 49);
+  font-style:arial;
+}
+
+.container {
+  background-color: white;
+  position: fixed;
+  margin: 200px 400px;
+  padding: 10px 40px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  color: rgb(1, 18, 49);
+  margin: 10px 0;
+}
+
+.input-field {
+  margin: 20px 0;
+}
+.input-field input {
+  font-size: 25px;
+  border-radius: 8px;
+  color: rgb(58, 58, 246);
+}
+.button {
+  margin-top: 70px;
+  width: 100%;
+  height: 30px;
+}
+.button button {
+  width: 100%;
+  background: rgba(37, 119, 226, 0.705);
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.button button:hover {
+  background-color: white;
+  color: rgba(37, 119, 226, 0.705);
+}
+.signup {
+  font-size: 20px;
+  margin-top: 30px;
+}
+.message {
+  color: black;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.register-field-label {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 200px 100px;
+    width: 400px;
+  }
+  header {
+    font-size: 40px;
+  }
+}
