@@ -9,6 +9,7 @@
 
 .navbar {
   position: fixed;
+  z-index: 999;
   width: 100%;
   padding: 25px 50px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -104,24 +105,330 @@
   margin: 5px 0;
 }
 
+.home .home-content a {
+  display: inline-block;
+  background: crimson;
+  padding: 14px 50px;
+  color: white;
+  border-radius: 10px;
+  margin: 30px 0px;
+  color: white;
+  transition: 0.2s all ease;
+  border: 2px solid crimson;
+}
+
+.home .home-content a:hover {
+  background: none;
+  color: crimson;
+}
+
+section {
+  padding: 100px 0;
+}
+
 .home .home-content .text-3 span {
   color: crimson;
   font-weight: 500;
   font-size: 50px;
 }
-
-.about {
+/*ALL SIMILAR STYLINGS */
+.about,
+.skill,
+.services,
+.team {
   font-family: sans-serif;
-  width: 100px;
+  text-align: center;
+  width: 100%;
 }
 
-.about .column-left img {
-  width: 100px;
+section .title {
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 200px;
+  height: 3px;
+  background: black;
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 1px;
+  z-index: 2;
+  background: white;
+  transform: translateX(-50%);
+}
+
+/*ABOUT SECTION STYLING */
+
+.about .about-content .column-left img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  margin: 5px 30px;
+  float: left;
+  border-radius: 10px;
+}
+
+.about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .about-content .column-left {
+  width: 45%;
+}
+
+.about .about-content .column-rigth {
+  font-size: 18px;
+  font-style: arial;
+  text-align: left;
+
+  width: 55%;
+}
+
+.about .about-content .column-rigth .text {
+  color: black;
+  font-size: 28px;
+  font-weight: 600;
+  font-style: monospace;
+}
+
+.about .about-content .column-rigth .text span {
+  color: crimson;
+  font-size: 25px;
+}
+
+.about .about-content a {
+  display: inline-block;
+  background: crimson;
+  padding: 14px 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin: 30px 0px;
+  color: white;
+  transition: 0.2s all ease;
+  border: 2px solid crimson;
+}
+
+.about .about-content a:hover {
+  background: none;
+  color: crimson;
+}
+
+.about .title::after {
+  content: "Who Am I";
+}
+
+/*SERVICE SECTION*/
+
+.services .title::after {
+  content: "What I Provide";
+  background-color: rgb(37, 35, 35);
+}
+
+.services .title::before {
+  background-color: rgb(255, 255, 255);
+}
+
+.services,
+.team {
+  background-color: rgb(27, 25, 25);
+  color: aliceblue;
+}
+
+.services .serv-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+.services .serv-content .card {
+  background-color: rgb(51, 47, 47);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover {
+  background: crimson;
+}
+
+.services .serv-content .card:hover i {
+  color: white;
+}
+
+.services .serv-content .card .box {
+  transition: all 0.3s ease;
+}
+
+.services .serv-content .card:hover .box {
+  transform: scale(1.05);
+}
+
+.services .serv-content .card i {
+  font-size: 50px;
+  color: white;
+}
+
+.services .serv-content .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  padding: 20px;
+}
+
+/*Skills Section styling */
+
+.skill .title::after {
+  content: "What I Know";
+}
+
+.skill .skill-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+
+.skill .skill-content .column-left,
+.skill .skill-content .column-rigth {
+  padding: 30px;
+}
+.skill .skill-content .column-left .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.skill .skill-content .column-left p {
+  font-size: 17px;
+}
+
+.skill .skill-content .column-rigth .bars {
+  margin-bottom: 20px;
+}
+
+.skill .skill-content .column-rigth .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill .skill-content .column-rigth .info span {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.skill .skill-content .column-rigth .line {
+  height: 5px;
+  width: 100%;
+  background-color: rgb(241, 228, 228);
+  position: relative;
+}
+
+.skill .skill-content .column-rigth .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  top: 0;
+  left: 0;
+  background-color: crimson;
+}
+
+.skill .skill-content .column-rigth .html::before {
+  width: 90%;
+}
+
+.skill .skill-content .column-rigth .css::before {
+  width: 70%;
+}
+
+.skill .skill-content .column-rigth .javascript::before {
+  width: 50%;
+}
+
+.skill .skill-content .column-rigth .python::before {
+  width: 90%;
+}
+
+.skill .skill-content .column-rigth .sql::before {
+  width: 50%;
+}
+
+.skill .skill-content a {
+  display: inline-block;
+  background: crimson;
+  padding: 14px 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin: 30px 0px;
+  color: white;
+  transition: 0.2s all ease;
+  border: 2px solid crimson;
+}
+
+.skill .skill-content a:hover {
+  background: none;
+  color: crimson;
+}
+
+/*teams section STYLINGS */
+
+.team .title::after {
+  content: "Who with me";
+  background-color: rgb(37, 35, 35);
+}
+
+.team .title::before {
+  background-color: rgb(255, 255, 255);
+}
+
+.team .couresol-1 .card {
+  background-color: rgb(32, 31, 27);
+  border-radius: 6px;
+  padding: 25px 20px;
+}
+
+.team .couresol-1 .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 54%;
+  border: 5px solid crimson;
+}
+
+.team .couresol-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
 }
 
 /*responsive media query*/
 
-@media (max-width: 947px) {
+@media (max-width: 1000px) {
   .navbar .menu {
     position: fixed;
     background-color: black;
@@ -157,5 +464,48 @@
     display: inline-block;
     margin: 20px 0px;
     font-size: 25px;
+  }
+
+  .about .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .about .about-content .column-left {
+    width: 100%;
+    padding: 0 25%;
+  }
+
+  .about .about-content .column-left img {
+    float: center;
+    width: 200px;
+    height: 200px;
+  }
+
+  .about .about-content .column-rigth {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px 20px;
+  }
+
+  .about .about-content .column-rigth .text {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  /*SERVICE SECTION*/
+  .services .serv-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  /*Skill SECTION*/
+
+  .skill .skill-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
 }

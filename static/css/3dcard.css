@@ -11,6 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   perspective: 800px;
+  color: red;
 }
 
 .container {
@@ -84,4 +85,13 @@ button.active {
   cursor: pointer;
   color: white;
   font-size: 15px;
+}
+
+@media (max-width:900px) {
+  .container {
+    width:100%;
+  }
+
+  .card{
+  width:70%}
 }
