@@ -1,4 +1,4 @@
-{% extends "Web1/base.html" %}
+{% extends "web1/base.html" %}
 
 {% block body %}
 
@@ -10,19 +10,19 @@
         grid-template-columns: 64% 33%;
         width:100%;
         margin-top: 30px;
-    
+
     }
     .dash-col{
         background-color: white;
         margin: 10px 0px 0 40px;
         border-radius: 10px;
         padding-bottom:20px ;
-     
+
     }
    .dash-card{
         width: 100%;
         padding:5px;
-    
+
     }
     table{
         width: 100%;
@@ -30,17 +30,15 @@
     .heading{
         color:rgb(3, 19, 93);
         font-size: 23px;
-        
+
     }
 
     .button-dash{
         display: flex;
-        align-items: center; 
+        align-items: center;
         height: 70px;
         width: 100%;
-
-        
-    }
+}
 
     .button-dash button{
         width: 100%;
@@ -51,6 +49,23 @@
         font-size: 20px;
         font-weight: 600;
     }
+    th{
+        padding-right: 30px;
+        padding-top: 5px;
+        font-size: 18px;
+        margin-left:10px;
+        border-bottom: 1px black  solid;
+
+    }
+
+    @media(max-width: 700px){
+            .row{
+                display:grid;
+                grid-template-columns: 1fr;
+                height: 500px;
+            }
+        }
+
 
     .button-dash button a{
         color:white
@@ -58,20 +73,19 @@
     #dash-col{
         margin-left: 80px ;
     }
-
     @media (max-width: 1200px ) {
         .dash-row{
         display:grid;
         grid-template-columns: 1fr;
         width:100%;
-        margin-top: 30px;     
+        margin-top: 30px;
     }
 
     .heading{
         color:rgb(3, 19, 93);
         font-size: 18px;
-       
-        
+
+
     }
     #dash-col{
         margin-left: 30px ;
@@ -80,7 +94,7 @@
         background-color: white;
         margin:  30px;
         border-radius: 10px;
-     
+
     }
 }
 </style>
@@ -101,15 +115,13 @@
                 </tr>
                 {% for order in order_item %}
                 <tr>
-                  
+
                     <th>{{order.product.name}}</th>
                     <th>{{order.date_created.date}}</th>
                     <th>{{order.date_created.time}}</th>
                     <th>{{order.status}}</th>
                     <th><a href="{% url 'updateorder' order.id %}">Update</a></th>
                     <th><a href="{% url 'deleteorder' order.id %}">Delete</a></th>
-
-                    
                 </tr>
                 {% endfor %}
             </table>
@@ -117,10 +129,11 @@
     </div>
 
 
+
     <div class="dash-col" id="dash-col">
         <div class="button-dash">
             <button><a href="{% url 'createcustomer' %}">Create Customer</a></button>
-        </div>      
+        </div>
         <div class="dash-card">
             <table>
                 <tr class="heading">
@@ -135,9 +148,10 @@
                 {% endfor %}
             </table>
         </div>
-    </div>   
+    </div>
+
 </div>
 
-  
+
 
 {% endblock %}

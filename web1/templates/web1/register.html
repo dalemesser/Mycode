@@ -1,4 +1,4 @@
-{% extends "Web1/base.html" %}
+{% extends "web1/base.html" %}
 
 
 {% block body %}
@@ -10,15 +10,15 @@
     <form action="{% url 'register' %}" method="POST">
         {% csrf_token %}
         {% for field in form %}
-        <div class="register-field-label">
-            {{field.label}} 
-            <div class="register-field-input">{{ field}}</div>
-        </div>
+        <div class="field">
+            {{field.label}}
+            <div class="field">{{ field}}</div>
+
         {% endfor %}
         <div class="button">
             <button type="submit">Signup</button>
         </div>
-       
+
     </form>
     <div class="signup">
         If you new , <a href="{% url 'login' %}">Log in</a>

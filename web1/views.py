@@ -59,7 +59,7 @@ def home(request):
         "dilivered_orders":dilivered_orders,
         "customers":customers
     }
-    return render(request,'Web1/dashbord.html',context)
+    return render(request,'web1/dashbord.html',context)
 @login_required(login_url="login")
 @allowed_users(allowed_roles=["admin"])
 def products(request):
@@ -67,7 +67,7 @@ def products(request):
     context ={
         "products":products
     }
-    return render(request,'Web1/products.html',context)
+    return render(request,'web1/products.html',context)
 
 @allowed_users(allowed_roles=["admin"])
 @login_required(login_url="login")
@@ -83,7 +83,7 @@ def customers(request,id):
         "orders_count":orders_count,
         "myFilter":myFilter
     }
-    return render(request,'Web1/customers.html',context)
+    return render(request,'web1/customers.html',context)
 
 
 @allowed_users(allowed_roles=["admin"])

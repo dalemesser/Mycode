@@ -1,0 +1,117 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* nav bar styling */
+
+.navbar {
+  position: relative;
+  width: 100%;
+  padding: 25px 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+  background-color: rgb(25, 181, 243);
+  padding: 25px 40px;
+}
+
+.navbar.sticky .menu li a:hover {
+  color: rgb(17, 4, 78);
+}
+.max-width {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.navbar .logo a span {
+  color: rgb(20, 173, 220);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.navbar .logo a span.sticky {
+  color: black;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: rgb(69, 150, 243);
+}
+
+.menu-btn {
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 947px) {
+  .navbar .menu {
+    position: fixed;
+    background-color: rgb(12, 30, 112);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0 50px;
+    top: 0;
+    left: -100%;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.5s ease;
+  }
+
+  .navbar .menu.active {
+    left: 0;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 1;
+  }
+
+  .menu-btn i.active:before {
+    content: "X";
+  }
+  .navbar .menu li {
+    display: block;
+    color: white;
+  }
+
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 20px 0px;
+    font-size: 25px;
+  }
+}
+
+.head{
+color:white;
+}
