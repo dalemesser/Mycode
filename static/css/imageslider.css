@@ -1,0 +1,86 @@
+.featured {
+  max-width: 600px;
+  max-height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid black;
+  margin: 0 40px;
+}
+
+.thumbnail {
+  object-fit: cover;
+  max-width: 100px;
+  max-height: 100px;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 5px;
+  border: 2px solid black;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+.slide-wrapper {
+  max-width: 500px;
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+}
+
+.slide {
+  max-width: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.2),
+    0px 0px 50px rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  padding: 30px;
+  margin: 20px 0 30px 200px;
+}
+
+.column button {
+  background-color: rgb(36, 25, 25);
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*resposive media */
+
+@media (max-width: 1200px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    border-radius: 5px;
+    margin: 30px;
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.2),
+      0px 0px 50px rgba(0, 0, 0, 0);
+  }
+
+  .column {
+    display: block;
+
+    width: 80%;
+  }
+}

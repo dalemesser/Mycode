@@ -1,0 +1,210 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: -webkit-linear-gradient(right, rgb(103, 245, 9), #d3ff12);
+  height: 100%;
+}
+
+.head {
+  width: 80%;
+  height: 70px;
+  color: rgb(11, 245, 3);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  margin: 0px 10px 0 0;
+  width: 92%;
+}
+
+.container header {
+  width: 94%;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
+  margin: 0px 50px 0 0;
+  left: 0;
+  top: 0;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0);
+}
+
+.container header h1 {
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+}
+
+.container .row .col a {
+  color: rgb(37, 246, 0);
+  background-color: rgb(0, 0, 0);
+  padding: 10px 50px;
+  border-radius: 5px;
+  margin: 5px 10px;
+  font-weight: 21px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sheet {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0);
+  width: 90%;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  margin: 10px 0;
+}
+
+.dairy {
+  margin-left: 30px;
+}
+.sheet-dairy {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0);
+  background: rgb(0, 0, 0);
+  width: 83%;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.dairybox {
+  margin-left: 0px;
+}
+
+h1 {
+  color: black;
+  margin-left: 30px;
+}
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card .button button {
+  color: rgb(45, 255, 8);
+  background-color: rgb(0, 0, 0);
+  padding: 10px 50px;
+  border-radius: 5px;
+  margin: 5px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card input {
+  padding: 5px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.item {
+  max-width: 1080px;
+  margin: 30px 0;
+  padding: 0 20px;
+  position: relative;
+  width: 80%;
+}
+
+.item .row {
+  display: flex;
+}
+
+.item .row-1 {
+  justify-content: flex-start;
+}
+
+.item .row section {
+  background: white;
+  border-radius: 5px;
+  width: 90%;
+  padding: 20px;
+  position: relative;
+  opacity: 0.9;
+
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2), 0px 0px 30px rgba(0, 0, 0, 0);
+}
+
+.item .row section::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: rgb(255, 255, 255);
+  top: 28px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.row-1 section::before {
+  right: -7px;
+}
+.item .row section .details,
+.item .row section .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item .row section .details .title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.item .row section p {
+  margin: 10px 0 17px 0;
+}
+
+.item .row section .bottom a {
+  text-decoration: none;
+  background: rgb(0, 0, 0);
+  color: rgb(43, 255, 0);
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container header .col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sheet {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2),
+      0px 0px 30px rgba(0, 0, 0, 0);
+    width: 100%;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    margin: 10px 0;
+  }
+
+  .dairy {
+    margin-left: 0px;
+  }
+  .sheet-dairy {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2),
+      0px 0px 30px rgba(0, 0, 0, 0);
+    background: rgb(0, 0, 0);
+    width: 95%;
+    border-radius: 5px;
+    margin: 10px;
+  }
+}

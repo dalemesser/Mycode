@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Blog</title>
+    {% load static %}
+    <link rel="stylesheet" type= text/css href="{% static '/css/slideblog.css' %}">
+</head>
+<body>
+    <div class="blog-card">
+        <input  type="radio" name="select" id="tap-1">
+        <input  type="radio" name="select" id="tap-2">
+        <input  type="radio" name="select" id="tap-3">
+        <input type="checkbox" id="tapimg">
+        <div class="slider">
+            <label for="tap-1" class="tap tap-1"></label>
+            <label for="tap-2" class="tap tap-2"></label>
+            <label for="tap-3" class="tap tap-3"></label>
+        </div>
+        <div class="inner-part">
+                <label for="tapimg" class="img img-1">
+                    <img src="{% static '/images/mega.jpg' %}">
+                </label>
+      
+            <div class="content content-1">
+                <span>21 th of December 2021</span>
+                <div class="title">Christmas Photos</div>
+                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae provident adipisci sequi quam distinctio mollitia omnis quia tempore modi harum, molestiae nam dolorum cum perspiciatis aut ipsam eos! Libero, voluptate.</div>
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <div class="inner-part">
+            <label for="tapimg" class="img img-2">
+                <img src="{% static '/images/dell.jpg' %}">
+            </label>
+            <div class="content content-2">
+                <span>1 th of January 2020</span>
+                <div class="title">New Year Photos</div>
+                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae provident adipisci sequi quam distinctio mollitia omnis quia tempore modi harum, molestiae nam dolorum cum perspiciatis aut ipsam eos! Libero, voluptate.</div>
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <div class="inner-part">
+            <label for="tapimg" class="img img-3">
+                <img src="{% static '/images/hp2.jpg' %}">
+            </label>
+            <div class="content content-3">
+                <span>26 th of December 2020</span>
+                <div class="title">My Vacation Photos</div>
+                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae provident adipisci sequi quam distinctio mollitia omnis quia tempore modi harum, molestiae nam dolorum cum perspiciatis aut ipsam eos! Libero, voluptate.</div>
+                <button>Read More</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

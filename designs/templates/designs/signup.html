@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type= text/css href="{% static '/css/signup.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Sign Up Form</title>
+</head>
+<body>
+    <div class="container">
+        <header>Signup Form</header>
+        <div class="progress-bar">
+            <div class="step">
+                <p>Name</p>
+                <div class="bullet">
+                    <span>1</span>
+                </div>
+                <div class="check fa fas-check"></div>
+            </div>
+            <div class="step">
+                <p>Contact</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check fa fas-check"></div>
+            </div>
+            <div class="step">
+                <p>Birth</p>
+                <div class="bullet">
+                    <span>3</span>
+                    <div class="check fa fas-check"></div>
+                </div>
+            </div>
+            <div class="step">
+                <p>Submit</p>
+                <div class="bullet">
+                    <span>4</span>
+                    <div class="check fa fas-check"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-outer">
+            <form action="#">
+                   <!--page 1-->
+                <div class="page slidepage">
+                    <div class="title">
+                        Basic Info :
+                    </div>
+                    <div class="field">
+                        <div class="label">First Name </div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Last Name </div>
+                        <input type="text">
+                    </div>
+                    <div class="field btns">
+                        <button  class="next-2 nxt">Next</button>
+                    </div>
+                </div>
+
+                   <!--page 2-->
+                   <div class="page">
+                    <div class="title">
+                        Contact Info :
+                    </div>
+                    <div class="field">
+                        <div class="label">Email Address </div>
+                        <input type="email">
+                    </div>
+                    <div class="field">
+                        <div class="label">Phone Number</div>
+                        <input type="number">
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-3 next">Next</button>
+                    </div>
+                </div>
+
+                   <!--page 3-->
+                   <div class="page">
+                    <div class="title">
+                        Birth Info :
+                    </div>
+                    <div class="field">
+                        <div class="label">Date of Birth </div>
+                        <input type="date">
+                    </div>
+                    <div class="field">
+                        <div class="label">Gender </div>
+                        <select>
+                            <option>Male</option>
+                            <option>Fe Male</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-2 prev">Previous</button>
+                        <button class="next-4 next">Next</button>
+                    </div>
+                </div>
+
+                   <!--page 4-->
+                   <div class="page">
+                    <div class="title">
+                        Login Info :
+                    </div>
+                    <div class="field">
+                        <div class="label">Username</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Password</div>
+                        <input type="password">
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-3 prev">Previous</button>
+                        <button class="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static '/js/signup.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "Web1/base.html" %}
+
+{% block body %}
+
+
+
+<div class="container">
+    <header>
+        Login Form
+    </header>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-field">
+            <input type="text" placeholder="username" name="username">
+        </div>
+        <div class="input-field">
+            <input type="password" placeholder="password" name="password">
+        </div>
+        <div class="button">
+            <button type="submit">Login</button>
+        </div>
+       
+    </form>
+    <div class="message">
+        {% for messege in messages %}
+        <p>{{ messege}}</p>
+        {% endfor %}
+    </div>
+    <div class="signup">
+        If you new , <a href="{% url 'register' %}">sign up</a>
+    </div>
+</div>
+
+
+{% endblock %}
