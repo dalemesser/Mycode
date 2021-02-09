@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgb(36, 32, 32);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  height: 65px;
+  line-height: 65px;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1250px;
+  padding: 0 30px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: inline-flex;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li .dropdown {
+  background-color: rgb(36, 32, 32);
+  width: 180px;
+  top: 85px;
+  line-height: 45px;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.nav-links li:hover .dropdown,
+.nav-links li:hover .mega-box {
+  top: 65px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.nav-links li .dropdown li a {
+  width: 100%;
+  display: block;
+  font-weight: 400;
+  border-radius: 0;
+  font-size: px;
+}
+
+.nav-links li a:hover {
+  background: rgb(54, 52, 52);
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.mega-box {
+  position: absolute;
+  top: 80px;
+  background: rgb(36, 32, 32);
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mega-box .content {
+  display: flex;
+  padding: 25px 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content .row {
+  width: 25%;
+  line-height: 45px;
+  margin: 20px;
+}
+
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content .row header {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mega-box .content .row .mega-links {
+  border-left: 2px solid rgba(43, 46, 53, 0.986);
+}
+
+.mega-links li {
+  padding: 0 20px;
+}
+
+.mega-links li a {
+  padding: 0 20px;
+  font-size: 17px;
+  display: block;
+}
+
+.nav-links .mobile-item {
+  display: none;
+}
+
+.btn {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.btn.cancel-btn {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+/*responsive media query */
+
+@media screen and (max-width: 970px) {
+  .btn {
+    display: block;
+  }
+
+  .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    background: rgb(36, 32, 32);
+    display: block;
+    top: 0;
+    left: -100%;
+    overflow-y: auto;
+    line-height: 50px;
+    padding: 50px 10px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  #menu-btn:checked ~ .nav-links {
+    left: 0;
+  }
+
+  #menu-btn:checked ~ .menu-btn {
+    display: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .wrapper .nav-links li {
+    margin: 15px 10px;
+  }
+
+  .wrapper .nav-links li a {
+    padding: 0 20px;
+    font-size: 20px;
+  }
+
+  .wrapper .nav-links .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    top: 65px;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.3s ease all;
+  }
+
+  #showdrop:checked ~ .dropdown,
+  #megadrop:checked ~ .mega-box {
+    max-height: 100%;
+  }
+
+  .nav-links .drop-menu li {
+    margin: 0;
+  }
+
+  .nav-links .drop-menu li a {
+    border-radius: 5px;
+  }
+  .nav-links .desktop-item {
+    display: none;
+  }
+  .nav-links .mobile-item {
+    display: block;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links .mobile-item:hover {
+    background: rgb(56, 52, 52);
+  }
+
+  .mega-box {
+    position: static;
+    top: 65px;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 2px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mega-box .content {
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+
+  .mega-box .content .row {
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgb(65, 63, 63);
+  }
+
+  .mega-box .content .row .mega-links {
+    border-left: none;
+    padding-left: 1px;
+  }
+}
+
+.wrapper input {
+  display: none;
+}

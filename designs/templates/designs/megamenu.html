@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megamenu</title>
+    {% load static %}
+    <link rel="stylesheet" type= text/css href="{% static '/css/menamenu.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">SimpleTech</a></div>
+            <input type="radio" name="slide" id="menu-btn">
+            <input type="radio" name="slide" id="cancel-btn">
+            <ul class="nav-links">
+                <label for="cancel-btn" class="btn cancel-btn"><i class="fas fa-times">X </i></label>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a  class="desktop-item" href="#" >Dropdown</a>
+                    <input type="checkbox" id="showdrop">
+                    <label for="showdrop" class="mobile-item">Dropdown</label>
+                    <ul class="dropdown">
+                        <li><a href="#">Dropdown 1</a></li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 3</a></li>
+                        <li><a href="#">Dropdown 4</a></li>
+                    </ul>
+                </li>
+                <li><a class="desktop-item"  href="#">Mega menu</a>
+                    <input type="checkbox" id="megadrop">
+                    <label for="megadrop" class="mobile-item">Mega menu</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="{% static '/images/mega.jpg' %}" alt="pc">
+                            </div>
+                            <div class="row">
+                                <header>
+                                    Design Services
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Grapics</a></li>
+                                    <li><a href="#">Vectors</a></li>
+                                    <li><a href="#">Bussiness Cards</a></li>
+                                    <li><a href="#">Custom Logo</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>
+                                    Email Services
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Personal Email</a></li>
+                                    <li><a href="#">Bussiness Email</a></li>
+                                    <li><a href="#">Mobile Email</a></li>
+                                    <li><a href="#">Web marketing</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>
+                                    Security Services
+                                </header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Site seal</a></li>
+                                    <li><a href="#">Vps Hosting</a></li>
+                                    <li><a href="#">Privacy Seal</a></li>
+                                    <li><a href="#">Website Design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn"><i class="fas fa-times">i</i></label>
+        </div>
+
+    </nav>
+    
+</body>
+</html>

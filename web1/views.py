@@ -215,3 +215,4 @@ def account(request):
         "form":form
     }
     return render(request,"web1/account.html",context)
+

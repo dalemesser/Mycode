@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    {% load static %}
+    <link rel="stylesheet" type= text/css href="{% static '/css/imageslider.css' %}">
+</head>
+<body>
+    {% for product in products %}
+    <div class="container">
+        <div class="column">
+            <img class="featured" src="{{product.imageUrl}}" alt="">
+
+        <div class="slide-wrapper">
+        <img id="sideleft" class="arrow" src="{% static '/images/arrowrigth.png' %}">
+
+        <div class="slide">
+
+            {%for image in product.image_set.all %}
+            <img class="thumbnail" src="{{image.imageUrl}}" alt="">
+            {% endfor %}
+            
+        </div>
+
+        <img id="siderigth" class="arrow" src="{% static '/images/arrow.png' %}">
+        </div>
+    </div>
+        <div class="column">
+            <h1>{{product.name}}</h1>
+            <hr>
+            <h3>Rs.{{product.price}}</h3>
+            <p>{{product.description}}</p>
+            <input value=1 type="number">
+            <button> Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+
+
+    
+   
+
+    <script>
+        let thumbnails = document.querySelectorAll(".thumbnail")
+        let active_image = document.querySelectorAll(".active")
+    
+        for (var i = 0 ; i < thumbnails.length; i++){
+            thumbnails[i].addEventListener('mouseover',function(){
+                if(active_image.length > 0){
+                    active_image[0].classList.remove("active")
+                    
+                }
+
+                this.classList.add("active")
+                document.querySelector(".featured").src = this.src
+                this.classList.remove('active')
+                
+                
+        
+        })};
+
+        let button_left = document.getElementById("sideleft")
+        let button_rigth = document.getElementById("siderigth")
+
+        button_left.addEventListener("click",function(){
+            document.querySelector('.slide').scrollLeft -= 180
+        })
+
+        button_rigth.addEventListener("click",function(){
+            document.querySelector('.slide').scrollLeft += 180
+        })
+
+
+
+
+
+
+    </script>
+
+    
+
+</body>
+</html>
+
